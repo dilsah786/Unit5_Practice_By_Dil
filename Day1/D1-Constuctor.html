@@ -4,51 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Constructors</title>
 </head>
 <body>
-    <script> 
-    var dilnawazdetails = {
-        name: 'dilnawaz',
-        age:22,
-     address:"Kapasiya",
-     sayhi:function(value){
-        console.log("Dilnawaz details" + value)
-     }
-    }
-    
-    dilnawazdetails.sayhi(" is totally right!"); 
+     
 
-    // function dilnawaz(){
-    //     console.log("this is a standard function")
-    // }
+    <script>
 
+        // ## Constructors: Templates / Blueprint for objects
+        // - Special functions in js to create objects
 
-
-    // var dilnawaz=function(){
-    //     console.log("this is an anonymous function")
-    // }
-
-    
-
-    // var dil=()=>{
-    //   console.log("this is an arrow function") 
-    //   }
-      
-    var sahdetails={
+        var sahDetails={
         firstname:"Sahila",
         lastnane:"Dilnawaz",
         age:20,
         address:"Maulanachak",
-        displayname:function(a,b){
+        displayName:function(a,b){
             console.log(this.firstname+" "+this.lastnane+" "+a+" "+b)
         }
     }
-    sahdetails.displayname("loves" ,"Dilnawaz")
-    
+    var dilDetails={
+        firstname:"Dilnawaz",
+        lastnane:"alam",
+        age:20,
+        address:"Kapasiya",
+        displayName:function(a,b){
+            console.log(this.firstname+" "+this.lastnane+" "+a+" "+b)
+        }
+    }
+    // ##  js Constructors
 
-    
+    function Student(firstname,lastname){
+        this.firstname=firstname
+        this.lasname=lastname
+    }
+   var dilDetails=new Student("Md"," Dilnawaz")
+   console.log(dilDetails)
+ 
+   var sahDetails=new Student("Sahila", " Shahbaz")
+   console.log(sahDetails)
+
+   // ## Inbuilt Constructors
+
+
+      // -Number constructor
+   let num1=new Number(10)
+   console.log(num1)
+
+     // -String constructor
+   let str1=new String("Dilnawaz")
+   console.log(str1)
+
+    // -Boolean constructor
+   let bool1= new Boolean(true);
+   console.log(bool1)
+
+
+ let num =5;
+ let numm=new Number(5)
+ console.log(num==numm)   //output => true
+
+ console.log(num===numm) //output => false
+
+  //.valueof() is used to change inbuilt object value into primitives types 
+ console.log(num===numm.valueOf())  //output => true
+
+
     </script>
-   
+    
 </body>
 </html>

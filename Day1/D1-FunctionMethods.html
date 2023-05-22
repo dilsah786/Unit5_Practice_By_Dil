@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Function Methods</title>
+</head>
+<body>
+    <script>
+      
+        /*
+    ## JS Function Methods
+        -Call
+        -Apply
+        -Bind
+
+        */
+  
+        var sahDetails={
+        firstname:"Sahila",
+        lastnane:"Dilnawaz",
+        age:20,
+        address:"Maulanachak",
+       
+    }
+    var dilDetails={
+        firstname:"Dilnawaz",
+        lastnane:"alam",
+        age:20,
+        address:"Kapasiya",
+    } 
+    function displayName(a,b){
+        console.log(this.firstname+" "+this.lastnane,a,b )
+    }
+    
+ 
+
+
+      //call()  --> invoke immediately
+    // displayName.call(dilDetails,"village","Kapasiya");
+    // displayName.call(sahDetails ,"village","Maulanachak");
+
+    //apply() -->invoke immediately
+    displayName.apply(dilDetails,["village","Kapasiya"]);
+    displayName.apply(sahDetails,["village","Maulanachak"]);
+
+//     // bind() -->invoke it whenwver you want to invoke it
+//    let displayNameOfDilnawaz = displayName.bind(dilDetails);
+//    displayNameOfDilnawaz()
+
+
+
+
+
+
+    </script>
+</body>
+</html>
