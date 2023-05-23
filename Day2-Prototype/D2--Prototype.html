@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+      /*   
+
+      //  ## Object
+          var obj={
+        firstname:"Md",
+        lastname:"Dilnawaz",
+        age:22,
+        
+    }
+    console.log(obj)
+    console.log(obj.__proto__.__proto__)
+
+    
+     // ## Array
+    var arr=[1,32,3,4654,6,4,6,]
+    console.log(arr)
+    console.log(arr.__proto__.__proto__.__proto__)
+
+     // ## Number
+     var num =new Number(10)
+     console.log(num.__proto__.__proto__.__proto__)
+
+    
+    // ## String
+     var str =new String("Dilnawaz")
+     console.log(str.__proto__.__proto__.__proto__)
+  
+     //----Prototype----
+
+      --Prototypal Chain--
+     //obj => object -> null
+     //arr=> Array -> object -> null
+     //num=> Number -> object -> null
+     //str=> String -> object -> null
+*/
+// let obj1={
+//     a:2,
+//     b:6
+// }
+//  // with the help of the object.create we are merging the obj1 in obj2
+
+// let obj2=Object.create(obj1)
+
+// obj2.c=10;
+// obj2.d=50;
+ 
+//     console.log(obj2.d)  // output -->50
+ /*  
+let cat ={
+    legs:4,
+    tail:true,
+    claws:"sharp",
+    moustache:true
+}
+
+// let tiger={
+//     legs:4,           //a
+//     tail:true,       //b
+//     claws:"sharp",  //c
+//     moustache:true,//d
+//     speed:60,
+//     color:"orange",
+//     weight:"300kgs",
+//     climb:true,
+// }
+// to avoid repetetive code of similar data(a,b,c,d) we can create object of data1....
+
+//  let tiger=Object.create(cat)
+//  tiger.speed=60
+//  tiger.color="orange";
+//  tiger.weight="300kgs";
+//  tiger.climb=true;
+
+
+// console.log(tiger.tail )  //output---> true
+
+const grandFather={
+    DNA:"DNANAME",
+    surname:"Sharma"
+}
+
+const Father=Object.create(grandFather)
+Father.House="Ashiyana"
+
+
+//By this method we can access surname ,house, Dna  from the Father and GrandFather 
+const Son =Object.create(Father) 
+Son.name="Rohit"
+Son.height="5.8 feet"
+
+
+console.log(Son.name+" "+Son.surname)
+
+------Prototype Property---------
+
+function student (firstname,lastname){
+    this.firstname=firstname;
+    this.lastname=lastname;
+
+}
+student.prototype.displayName=function(){
+    console.log(this.firstname+" "+this.lastname)
+}
+// Setting Country property for the student with the help of prototype method
+student.prototype.counrty="india"
+const dilnawaz=new student("Md","Dilnawaz alam")
+dilnawaz.displayName();
+console.log(dilnawaz.counrty)
+
+
+*/
+
+/*
+
+// Constructor Inheritance
+
+function Person(firstname,lastname){
+    this.firstname=firstname;
+    this.lastname=lastname;
+
+}
+Person.prototype.displayName=function(){
+    console.log(this.firstname+" "+this.lastname)
+}
+
+const person1=new Person("Dilnawaz","Kapasiya")
+person1.displayName()
+
+
+function student(firstname,lastname,batchno,techStack){
+    Person.call(this,firstname,lastname)
+    this.batchno=batchno;
+    this.techStack=techStack
+}
+
+Object.setPrototypeOf(student.prototype,Person.prototype)
+let student1=new student("Dilnawaz","Kapasiya",15,"MERN")
+console.log(student1)
+student1.displayName()
+
+*/
+    </script>
+  
+    
+</body>
+</html>
