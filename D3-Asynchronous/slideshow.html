@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+    <style>
+        image{
+            width:30px;
+            height: 50px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" name="" id="url">
+    <button onclick="storeImage()">Submit image</button>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <button onclick="startslide()">Start SlideShow</button>
+    <button onclick="stopslide()">Stop SlideShow</button>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div id="slideshow_container">
+
+    </div>
+
+    
+<script>
+    var images=[
+   ' https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=',
+   'https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg',
+   'https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_1280.jpg'
+    ];
+    var slideshow_container =document.getElementById("slideshow_container");
+
+    function storeImage(){
+        let img =document.getElementById("url").value;
+        img.style.width
+        images.push(img);
+        console.log(images)
+         img =document.getElementById("url").value=""
+    }
+    var timeInterval;
+    function startslide(){
+        let SlideShowimg=document.createElement("img");
+        let i=0;
+
+         timeInterval =setInterval(()=>{
+            if(i===images.length){
+                i=0;
+            }
+            SlideShowimg.src=images[i];
+            i++;
+
+         },2000);
+         slideshow_container.append(SlideShowimg)
+    }
+    function stopslide(){
+        clearInterval(timeInterval)
+    }
+
+</script>
+
+
+</body>
+
+</html>

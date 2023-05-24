@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        /*
+          --- Synchronous :  Excutes expression line by line  ,  Blocking
+          --- Asynchronous:  Not necessarily executes expression line by line  , Non Blocking
+         
+           API : it is medium by which Client can connect to the Server 
+          
+          
+   
+        // Synchronous code
+        console.log(1)
+        console.log(2)
+        console.log(3)
+        console.log(4)
+        console.log(5)
+
+
+        // Js Memory : Stack (Primitive) ,Heap (Non Primitive)
+        // JS Execution Context : Environment where js code id executed .(console window)
+        // Js Execution Phase : 1. Creation (Hoisting happens here)  2. Execution Phase
+        
+
+
+        function sum(a,b){
+            sum=a+b;
+            return sum;
+        }
+        console.log(sum(3,5));
+       */
+
+       /*
+       -----------------------------------------------------------------
+         
+         // setTimeout function is asynchronous function
+
+        // SetTimeout() :Used to execute after specific amount of time
+        // -- 2 Arguments have to pass --> //1. Callback with the expression to execute  2. time in ms
+
+
+        // console.log(1);
+        // // this piece of code(20) will run after 2000ms 
+        // setTimeout(() => {
+        //     console.log(20);
+        // }, 2000);
+
+        // // this piece of code(2) will run after 1000ms 
+        // setTimeout(() => {
+        //     console.log(2)
+        // }, 1000);
+        // console.log(3);
+        // console.log(4);
+        // console.log(5);
+
+        
+   /*
+   
+   ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+      // setInterval() --> setInter is used to execute expression repeatedly after specific amount of time in milliseconds....
+      // clearInterval() --> clearInterval is used to clear the time interval created by setInterval
+
+    //     setInterval(() =>{
+    //    console.log("dilnawaz")
+    //     },1000);
+
+    let count=0;
+    setInterval(() => {
+        count++;
+        console.log(count)
+    }, 10000);
+    
+     */
+
+    </script>
+
+</head>
+<body>
+
+    <p style="text-align: center; font-size: 5rem;">Bomb will Explode in 10 Seconds</p>
+    <p style="text-align: center; font-size: 10rem;" id="timer">10</p>
+    <button onclick="difuseBomb()">Difuse Bomb</button>
+
+    <script>
+        let timer =10;
+        document.getElementById("timer").innerText=timer;
+        let timeInterval = setInterval(()=>{
+            timer--;
+            document.getElementById("timer").innerText=timer;
+            if(timer==0){
+                document.getElementById("timer").innerText="Boom !"
+                clearInterval(timeInterval)
+            }
+        },1000)
+
+        function difuseBomb(){
+            clearInterval(timeInterval)
+            document.getElementById("timer").innerText="You have Difused Bomb!"
+
+        }
+    </script>
+</body>
+</html>
