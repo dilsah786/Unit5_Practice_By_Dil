@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+
+    <script>
+
+        /*
+
+        // Promise : It is javascript object that keeps track of the eventual completion (resolve) or failure (reject) of any Asynchronous task..
+         
+      ## 3 State of Promise: 
+        -pending
+        -resolve/fulfill
+        -reject
+
+        # Promise can be created using Promise Constructor
+        - Syntax -> 
+          new Promise (function(resolve, reject){})----  (Anonymous Function)
+          new Promise ((resolve, reject) => {}) -------  (Arrow Function)
+
+          let promise1= new Promise (()=>{
+            resolve("5")
+          })
+
+          let promise1 = new Promise(()=>{
+            reject("oops")
+          })
+
+          let promise1 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("I am trying to rasolve this in 5sec")
+            },5000)
+          })
+
+          # Handling Promise : 2 methods which we chain to the promise objects
+          - then() callback  : Handle the resolved part
+          - catch() callback : Handle the rejected part
+
+          Syntax -> 
+          -promise1.then().catch()
+
+       
+        // 1.Declare the Promise
+        var promise1 = new Promise((resolve,reject) => {
+             setTimeout(() => {
+                resolve("I am trying to rasolve this querry in the given seconds")
+             },2000)
+        });
+        
+
+        // Handle the Promise Part
+
+        promise1.then((resolvedValue) => {
+            console.log("hiii",resolvedValue)
+        }).catch((rejectedValue) => {
+            console.log("Bye",rejectedValue)
+        })
+
+      */
+
+      /*
+
+
+      //  I have tried to mimic the behavior of real APIs
+
+     let studentAPI =new Promise((resolve,reject)=>{
+     let datainDB = [{name:"dilnawaz" , batch:5},{name:"shahbaz",batch:10}]
+
+     setTimeout(()=>{
+        resolve(datainDB)
+     },2000)
+     })
+
+     studentAPI.then((student)=>{
+        console.log("fetched Data Successfully",student)
+
+     }).catch((err)=>{
+       console.log(err,"Sorry Server is Down")
+     }).finally(()=>{    // Excutes regardLess of resolved/rejected
+        console.log("Fetched Data Successfully")
+     })
+     
+
+
+  */
+   
+     
+     // ##--> Coin Toss for Decider
+
+    // let getRandomValue = () => {
+    //     return Math.round(Math.random())
+    // }
+    // let coinToss = new Promise((resolve,reject) => {
+    //     let result =getRandomValue()
+    //     setTimeout(() => {
+    //         if(result==0){
+    //             console.log("Heads")
+    //         } else{
+    //             console.log("Tails")
+    //         }
+    //     },1000)
+
+    // })
+    // coinToss.then((res) => {
+    //   console.log(res)
+    // }).catch((err) => {
+    //   console.log(err)
+    // })
+
+  // Promise.all  -->  It can be used to reolved many promise at once and if all promise get resolve then it will work other wise it will thorw error
+
+
+    let promise1 = new Promise((resolve,reject) => {
+
+        setTimeout(() => {
+           resolve(5)
+        },2000)
+    })
+ 
+    
+    let promise2 = new Promise((resolve,reject) => {
+
+setTimeout(() => {
+    resolve(10)
+},3000)
+})
+
+Promise.all([promise1,promise2]).then((resolvedValue) => {
+console.log(resolvedValue ,"congrats i am here for you")
+}).catch((err) =>{
+    console.log(err ,"Its not working")
+})
+
+
+    
+      
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

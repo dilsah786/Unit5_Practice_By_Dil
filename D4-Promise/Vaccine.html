@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Vaccination Registration Centre</h1>
+    <input type="text" name="" id="name" placeholder="Enter your name">
+    <button onclick="register()">Submit</button>
+    <h3>Current Turn : <span id="curr-turn"></span></h3>
+    
+</body>
+
+<script>
+
+    let queue = ["Akbar","Gotiya","Shahbaz","Dilnawaz"]
+
+    const register =()=>{
+        let name =document.getElementById("name").value;
+        queue.push(name);
+        console.log("Queue: "+queue)
+        
+        let message = `${name}: Your registration is Successfully. Please wait for your turn`
+        alert(message);
+        document.getElementById("name").value="";
+    
+
+    let promise =new Promise((resolve,reject)=>{
+        let timeInterval = setInterval(()=>{
+
+            let currentturn = queue.shift();
+            document.getElementById("curr-turn").innerText=currentturn;
+            console.log(queue)
+
+            if(currentturn==name){
+                resolve(`${name} : Its your turn now`);
+                clearInterval(timeInterval)
+            }
+
+        },2000)
+
+    })
+
+    promise.then((res)=>{
+        alert(res)
+    }).catch((err)=>{
+        console.log(err)
+    })
+
+}
+
+</script>
+</html>
